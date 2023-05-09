@@ -1,4 +1,4 @@
-<p>Given an integer array&nbsp;<code>arr</code>&nbsp;and a filtering&nbsp;function&nbsp;<code>fn</code>,&nbsp;return&nbsp;a new array with a fewer or equal number of elements.</p>
+<h2><a href="https://leetcode.com/problems/filter-elements-from-array">Filter Elements from Array</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given an integer array&nbsp;<code>arr</code>&nbsp;and a filtering&nbsp;function&nbsp;<code>fn</code>,&nbsp;return&nbsp;a new array with a fewer or equal number of elements.</p>
 
 <p>The returned array should only contain elements where&nbsp;<code>fn(arr[i],&nbsp;i)</code>&nbsp;evaluated to a truthy value.</p>
 

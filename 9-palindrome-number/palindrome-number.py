@@ -1,6 +1,6 @@
-class Solution:
-    def isPalindrome(self, x: int) -> bool:
+class Solution(object):
+    def isPalindrome(self, x):
         if x < 0:
             return False
-        
-        return str(x) == str(x)[::-1]
+        else:
+            return str(x) == str(x)[::-1]

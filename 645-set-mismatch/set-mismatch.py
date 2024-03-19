@@ -1,12 +1,20 @@
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
         n = len(nums)
-        expected_sum = n * (n + 1) // 2
-        expected_sum_of_squares = n * (n + 1) * (2 * n + 1) // 6
+        # Calculate the sum of all numbers and the sum of squares
         actual_sum = sum(nums)
-        actual_sum_of_squares = sum(x ** 2 for x in nums)
-        delta_sum = expected_sum - actual_sum
-        delta_sum_of_squares = expected_sum_of_squares - actual_sum_of_squares
-        duplicated_num = (delta_sum_of_squares - delta_sum ** 2) // (2 * delta_sum)
-        missing_num = duplicated_num + delta_sum
-        return [duplicated_num, missing_num]
+        expected_sum = n * (n + 1) // 2
+        actual_sum_of_squares = sum(num * num for num in nums)
+        expected_sum_of_squares = sum(num * num for num in range(1, n + 1))
+        
+        # Calculate the difference between actual and expected sums
+        sum_diff = actual_sum - expected_sum
+        sum_of_squares_diff = actual_sum_of_squares - expected_sum_of_squares
+        
+        # Calculate the duplicate number
+        duplicate = (sum_of_squares_diff // sum_diff + sum_diff) // 2
+        
+        # Calculate the missing number
+        missing = duplicate - sum_diff
+        
+        return [duplicate, missing]

@@ -37,11 +37,11 @@ var mergeInBetween = function(list1, a, b, list2) {
     } else {
         list1 = list2;
     }
-    curr = list2;
-    while (curr.next) {
-        curr = curr.next;
+    let curr2 = list2;
+    while (curr2.next) {
+        curr2 = curr2.next;
     }
-    curr.next = nextNode;
+    curr2.next = nextNode;
 
     return list1;
 };

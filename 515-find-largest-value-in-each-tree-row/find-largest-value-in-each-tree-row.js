@@ -5,6 +5,7 @@ var largestValues = function(root) {
 
     let queue = [root];
     let res = [];
+
     while (queue.length) {
         let levelSize = queue.length;
         let maxVal = -Infinity;

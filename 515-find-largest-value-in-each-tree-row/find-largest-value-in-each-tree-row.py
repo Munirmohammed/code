@@ -5,8 +5,9 @@ class Solution:
 
         queue, res = [root], []
         while queue:
+            level_size = len(queue)
             max_val = float('-inf')
-            for i in range(len(queue)):
+            for _ in range(level_size):
                 node = queue.pop(0)
                 max_val = max(max_val, node.val)
                 if node.left:

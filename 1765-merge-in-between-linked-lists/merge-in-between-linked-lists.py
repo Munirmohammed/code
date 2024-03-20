@@ -8,10 +8,12 @@ class Solution:
             curr = curr.next
         
         # Remove the nodes in the range [a, b]
-        for _ in range(b - a + 1):
-            next_node = curr.next
-            curr.next = None
+        next_node = curr.next
+        for _ in range(b - a):
+            curr.next = next_node
             curr = next_node
+            if next_node:
+                next_node = next_node.next
         
         # Insert list2 into the removed range
         if prev:

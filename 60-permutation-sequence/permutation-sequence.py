@@ -10,10 +10,10 @@ class Solution:
         nums = list(range(1, n+1))
         k -= 1
         result = []
-        while n > 0:
-            index = k // factorial(n-1)
+        for i in range(n, 0, -1):
+            nums.sort()
+            index = k // factorial(i-1)
             result.append(str(nums[index]))
-            nums.pop(index)
-            k %= factorial(n-1)
-            n -= 1
+            nums.remove(nums[index])
+            k %= factorial(i-1)
         return ''.join(result)

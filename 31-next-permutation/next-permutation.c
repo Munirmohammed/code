@@ -1,4 +1,21 @@
+void swap(int* a, int* b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+void reverse(int* arr, int start, int end) {
+    while (start < end) {
+        swap(&arr[start], &arr[end]);
+        start++;
+        end--;
+    }
+}
+
 void nextPermutation(int* nums, int numsSize) {
+    if (numsSize < 2) {
+        return;
+    }
     int i = numsSize - 2;
     while (i >= 0 && nums[i] >= nums[i + 1]) {
         i--;
@@ -8,17 +25,7 @@ void nextPermutation(int* nums, int numsSize) {
         while (j > i && nums[j] <= nums[i]) {
             j--;
         }
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
+        swap(&nums[i], &nums[j]);
     }
-    int left = i + 1;
-    int right = numsSize - 1;
-    while (left < right) {
-        int temp = nums[left];
-        nums[left] = nums[right];
-        nums[right] = temp;
-        left++;
-        right--;
-}
+    reverse(nums, i + 1, numsSize - 1);
 }

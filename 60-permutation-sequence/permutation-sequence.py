@@ -10,13 +10,10 @@ class Solution:
         nums = list(range(1, n+1))
         k -= 1
         result = []
-        dp = [0]*n
-        dp[0] = 1
-        for i in range(1, n):
-            dp[i] = dp[i-1]*i
-        for i in range(n-1, -1, -1):
-            index = k // dp[i]
+        while n > 0:
+            index = k // factorial(n-1)
             result.append(str(nums[index]))
             nums.pop(index)
-            k %= dp[i]
+            k %= factorial(n-1)
+            n -= 1
         return ''.join(result)

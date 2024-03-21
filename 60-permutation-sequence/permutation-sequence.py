@@ -13,7 +13,7 @@ class Solution:
         while n > 0:
             factorial_n_minus_1 = factorial(n-1)
             index, k = divmod(k, factorial_n_minus_1)
-            result.append(nums[index])
+            result.append(str(nums[index]))
             nums.pop(index)
             n -= 1
-        return ''.join(map(str, result))
+        return ''.join(result)

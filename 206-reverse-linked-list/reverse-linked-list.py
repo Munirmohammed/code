@@ -1,16 +1,16 @@
 class Solution:
+    def init(self, val):
+        self.val = val
+        self.next = None
+        
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        # Count the number of nodes in the list
-        count = 0
-        current = head
-        while current:
-            count += 1
-            current = current.next
+        if not head:
+            return head
 
-        # Reverse the list using math
+
         prev = None
         current = head
-        for _ in range(count):
+        while current:
             next_node = current.next
             current.next = prev
             prev = current

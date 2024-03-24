@@ -1,12 +1,8 @@
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
-        hash_table = {}
-        
+        seen = set()
         for num in nums:
-            if num in hash_table:
+            if num in seen:
                 return num
-            else:
-                hash_table[num] = 1
-        
-        return 0  # This will never be reached because the loop above will return the duplicate number if it exists
-                  
+            seen.add(num)
+        return -1  # No duplicate found

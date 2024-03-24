@@ -1,14 +1,22 @@
 class Solution:
     def findSpecialInteger(self, arr: List[int]) -> int:
-        # Find the total number of elements in the array
         n = len(arr)
+    
+        # Create a hash table to store the counts of elements
+        count_table = {}
         
-        # Count the occurrences of each element using Counter
-        from collections import Counter
-        count = Counter(arr)
+        for element in arr:
+            if element in count_table:
+                count_table[element] += 1
+            else:
+                count_table[element] = 1
         
-        # Create a list of elements that appear more than 25% of the time
-        frequent_elems = [key for key, value in count.items() if value > n//4]
+        # Iterate through the hash table and find the element that appears more than 25% of the time
+        for key, value in count_table.items():
+            if value > n//4:
+                return key
         
-        # Return the only element (there can be only one, given the input) from the list
-        return frequent_elems[0] if frequent_elems else None
+        return -1  # return -1 if no element is found
+
+                  
+                  

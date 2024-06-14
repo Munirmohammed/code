@@ -37,7 +37,7 @@ var replaceWords = function(dictionary, sentence) {
             }
             node = node.children[words[i][j]];
             if (node.isEnd) {
-                words[i] = words[i].substring(0, j + 1);
+                words[i] = words[i].slice(0, j + 1);
                 break;
             }
         }

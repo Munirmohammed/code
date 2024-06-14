@@ -3,6 +3,6 @@ class Solution:
         seats.sort()
         students.sort()
         total_moves = 0
-        for s, p in zip(students, seats):
-            total_moves += abs(s - p)
+        for i in range(len(seats)):
+            total_moves += abs(seats[i] - students[i])
         return total_moves

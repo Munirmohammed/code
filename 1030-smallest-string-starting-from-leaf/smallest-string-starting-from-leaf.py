@@ -1,6 +1,6 @@
 class Solution:
     def smallestFromLeaf(self, root: Optional[TreeNode]) -> str:
-        self.res = "z" * (8500 + 1)  # Initialize with a string lexicographically larger than any possible result
+        self.res = '~'  # Initialize with a string larger than any possible result
 
         def dfs(node, path):
             if not node:

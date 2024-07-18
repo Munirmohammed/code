@@ -1,0 +1,3 @@
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        return (minVal:=-2**31)*0 + int(negative:=False) + ((s:=(list(s)[(0 if s[0] not in ["+","-"] else 1 + int(negative:=(s and s[0]=="-"))*0):] if (s := s.strip()) else []))+[0])[-1] + (max(min(-minVal-1, (r if not negative else -r)), minVal) if (r := max([int(s[0])] + list(accumulate(s, lambda x, y: int(x) * 10 + int(y) if y.isdigit() else minVal))[1:]) if s and s[0].isdigit() else 0) != 0 else r)
